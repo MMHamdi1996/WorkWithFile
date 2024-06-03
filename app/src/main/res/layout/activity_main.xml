@@ -25,4 +25,14 @@
         app:layout_constraintEnd_toEndOf="@+id/createFolder"
         app:layout_constraintStart_toStartOf="@+id/createFolder"
         app:layout_constraintTop_toBottomOf="@+id/createFolder" />
+
+    <Button
+        android:id="@+id/readFileContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="خواندن محتوای فایل"
+        app:layout_constraintEnd_toEndOf="@+id/createTextFile"
+        app:layout_constraintStart_toStartOf="@+id/createTextFile"
+        app:layout_constraintTop_toBottomOf="@+id/createTextFile" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.file.databinding.ActivityMainBinding
 import java.io.File
+import java.io.FileReader
 import java.io.FileWriter
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +25,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
         val textFile = File(fileDir, "file.txt")
         binding.createTextFile.setOnClickListener {
             val fileWriter = FileWriter(textFile , true)
@@ -32,6 +32,11 @@ class MainActivity : AppCompatActivity() {
             fileWriter.flush()
             fileWriter.close()
             Toast.makeText(this, "فایل متنی ساخته شد", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.readFileContent.setOnClickListener {
+            val fileReader = FileReader(textFile)
+            Toast.makeText(this, fileReader.readText(), Toast.LENGTH_SHORT).show()
         }
     }
 }
