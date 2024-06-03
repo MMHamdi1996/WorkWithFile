@@ -14,9 +14,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        val fileDir = File(getExternalFilesDir(null), "testDirectory")
         binding.createFolder.setOnClickListener {
-            val fileDir = File(getExternalFilesDir(null), "testDirectory")
             if (!fileDir.exists()) {
                 fileDir.mkdirs()
                 Toast.makeText(this, "پوشه ساخته شد", Toast.LENGTH_SHORT).show()
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        val fileDir = File(getExternalFilesDir(null), "testDirectory")
         val textFile = File(fileDir, "file.txt")
         binding.createTextFile.setOnClickListener {
             val fileWriter = FileWriter(textFile , true)
