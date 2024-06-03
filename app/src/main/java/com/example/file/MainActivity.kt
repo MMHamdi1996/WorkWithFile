@@ -36,7 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.readFileContent.setOnClickListener {
             val fileReader = FileReader(textFile)
-            Toast.makeText(this, fileReader.readText(), Toast.LENGTH_SHORT).show()
+            binding.fileText.text = fileReader.readText()
+            fileReader.close()
         }
     }
 }
